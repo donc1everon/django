@@ -3,24 +3,25 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Броши | Чеширский кот</title>
-	<link rel="stylesheet" href="css/style.css">
+	{% load staticfiles %}
+	<link rel="stylesheet" href="{% static 'mainapp/style.css' %}">
 </head>
 <body>
 
 	<div class="header">
-		<a href="index.html"><span class="first-part-logo">un</span><span class="sec-part-logo">usualness</span></a>
+		<a href="/"><span class="first-part-logo">un</span><span class="sec-part-logo">usualness</span></a>
 		<ul class="main-menu">
-			<li><a href="index.html">Главная</a></li>
-			<li><a href="catalog.html">Каталог</a></li>
-			<li><a href="contacts.html">Контакты</a></li>
+			<li><a href="/">Главная</a></li>
+			<li><a href="/catalog/">Каталог</a></li>
+			<li><a href="/contacts/">Контакты</a></li>
 		</ul>
 	</div>
 
 	<div class="main first-letter-p">
 		<h1>Брошь "Чеширский кот"</h1>
 		<div class="description">
-			<a href="img/cheshire_cat.jpg" target=_blank>
-				<img src="img/cheshire_cat.jpg" alt="Брошь - лицо Чеширского кота" class="good-img">
+			<a href="{% static 'mainapp/img/cheshire_cat.jpg' %}" target=_blank>
+				<img src="{% static 'mainapp/img/cheshire_cat.jpg' %}" alt="Брошь - лицо Чеширского кота" class="good-img">
 			</a>
 			<h2>Описание товара:</h2>
 			<p class="short-description">Брошь из полимерной глины «Чеширский кот»</p>

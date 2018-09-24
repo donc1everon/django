@@ -14,3 +14,8 @@ def main_page(request):
 def product_detail(request):
 
     return render(request, 'mainapp/brooch.html')
+
+
+def contacts(request):
+
+    return render(request, 'mainapp/contacts.html')

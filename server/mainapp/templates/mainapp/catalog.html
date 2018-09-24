@@ -3,16 +3,17 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Каталог товаров</title>
-	<link rel="stylesheet" href="css/style.css">
+	{% load staticfiles %}
+	<link rel="stylesheet" href="{% static 'mainapp/style.css' %}">
 </head>
 <body>
 	
 	<div class="header">
-		<a href="index.html"><span class="first-part-logo">un</span><span class="sec-part-logo">usualness</span></a>
+		<a href="/"><span class="first-part-logo">un</span><span class="sec-part-logo">usualness</span></a>
 		<ul class="main-menu">
-			<li><a href="index.html">Главная</a></li>
-			<li><a href="#">Каталог</a></li>
-			<li><a href="contacts.html">Контакты</a></li>
+			<li><a href="/">Главная</a></li>
+			<li><a href="/catalog/">Каталог</a></li>
+			<li><a href="/contacts/">Контакты</a></li>
 		</ul>
 	</div>
 
@@ -20,8 +21,8 @@
 		<h1>Каталог</h1>
 		<div class="goods-catalog">
 			<div class="good">
-				<a href="brooch.html" >
-					<img src="img/cheshire_cat.jpg" alt="Брошь Чеширский кот" class="catalog-img">
+				<a href="/brooch/" >
+					<img src="{% static 'mainapp/img/cheshire_cat.jpg' %}" alt="Брошь Чеширский кот" class="catalog-img">
 					<p>Брошь "Чеширский&nbsp;кот"</p>
 				</a>
 			</div>
