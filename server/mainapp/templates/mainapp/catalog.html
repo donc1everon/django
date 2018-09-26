@@ -1,60 +1,25 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<title>Каталог товаров</title>
-	{% load staticfiles %}
-	<link rel="stylesheet" href="{% static 'mainapp/style.css' %}">
-</head>
-<body>
-	
-	<div class="header">
-		<a href="/"><span class="first-part-logo">un</span><span class="sec-part-logo">usualness</span></a>
-		<ul class="main-menu">
-			<li><a href="/">Главная</a></li>
-			<li><a href="/catalog/">Каталог</a></li>
-			<li><a href="/contacts/">Контакты</a></li>
-		</ul>
-	</div>
+{% extends 'master.html' %}
 
+{% load staticfiles %}
+
+{% block page_title %}
+Каталог
+{% endblock %}
+
+{% block page_menu %}
+
+{% include 'mainapp/components/includes/inc_menu.html' %}
+
+{% endblock %}
+
+{% block page_content %}
+	
 	<div class="content">
 		<h1>Каталог</h1>
-		<div class="goods-catalog">
-			<div class="good">
-				<a href="/brooch/" >
-					<img src="{% static 'mainapp/img/cheshire_cat.jpg' %}" alt="Брошь Чеширский кот" class="catalog-img">
-					<p>Брошь "Чеширский&nbsp;кот"</p>
-				</a>
-			</div>
-			<div class="good">
-				<a href="#" >
-					<img src="http://placehold.it/100x82" alt="Брошь Чеширский кот" class="catalog-img">
-					<p>Товар 2</p>
-				</a>
-			</div>
-			<div class="good">
-				<a href="#" >
-					<img src="http://placehold.it/100x82" alt="Брошь Чеширский кот" class="catalog-img">
-					<p>Товар 3</p>
-				</a>
-			</div>
-			<div class="good">
-				<a href="#" >
-					<img src="http://placehold.it/100x82" alt="Брошь Чеширский кот" class="catalog-img">
-					<p>Товар 4</p>
-				</a>
-			</div>			
-			<div class="good">
-				<a href="#" >
-					<img src="http://placehold.it/100x82" alt="Брошь Чеширский кот" class="catalog-img">
-					<p>Товар 5</p>
-				</a>
-			</div>
-		</div>
-	</div>
 
-	<div class="footer">
-		<p>«Все права защищены» &copy;</p>
-	</div>
-</body>
-</html>
+		{% include 'mainapp/components/includes/inc_goods.html' %}
+
+		</div>
+
+
+{% endblock %}

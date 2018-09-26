@@ -1,21 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<title>Броши | Чеширский кот</title>
-	{% load staticfiles %}
-	<link rel="stylesheet" href="{% static 'mainapp/style.css' %}">
-</head>
-<body>
+{% extends 'master.html' %}
 
-	<div class="header">
-		<a href="/"><span class="first-part-logo">un</span><span class="sec-part-logo">usualness</span></a>
-		<ul class="main-menu">
-			<li><a href="/">Главная</a></li>
-			<li><a href="/catalog/">Каталог</a></li>
-			<li><a href="/contacts/">Контакты</a></li>
-		</ul>
-	</div>
+{% load staticfiles %}
+
+{% block page_title %}
+Брошь - Чеширский кот
+{% endblock %}
+
+{% block page_menu %}
+
+{% include 'mainapp/components/includes/inc_menu.html' %}
+
+{% endblock %}
+
+{% block page_content %}
 
 	<div class="main first-letter-p">
 		<h1>Брошь "Чеширский кот"</h1>
@@ -68,9 +65,4 @@
 		<p class="full-description">Уникальная брошь &laquo;Чеширский кот&raquo;, выполненная в&nbsp;стиле &laquo;квиллинг&raquo;, придется по&nbsp;вкусу всем любителям &laquo;Алисы в&nbsp;стране чудес&raquo; Льюиса Кэррола</p>
 	</div>
 
-	<div class="footer">
-		<p>«Все права защищены» &copy;</p>
-	</div>
-
-</body>
-</html>
+{% endblock %}

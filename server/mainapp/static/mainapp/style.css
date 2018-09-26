@@ -92,6 +92,7 @@ th, td {
 textarea {
 	height: 120px;
 }
+
 .clearfix {
 	clear: both;
 }
@@ -147,6 +148,10 @@ textarea {
 .main-menu li:hover a{
 	background-color: #87DBBE;
 	color: #F3791F;
+}
+li.active {
+	background-color: #ECA673;
+	border-color: #ECA673;
 }
 
 

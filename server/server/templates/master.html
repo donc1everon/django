@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>
+        {% block page_title %}
+        {% endblock %}
+    </title>
+	{% load staticfiles %}
+	<link rel="stylesheet" href="{% static 'mainapp/style.css' %}">
+</head>
+<body>
+
+	<div class="header">
+		<a href="/"><span class="first-part-logo">un</span><span class="sec-part-logo">usualness</span></a>
+		{% now "jS F Y H:i (T)" %}
+        {% block page_menu %}
+        {% endblock %}
+    </div>
+		
+
+        {% block page_content %}
+        {% endblock %}
+
+	<div class="footer">
+		<p>«Все права защищены» &copy;</p>
+	</div>
+
+</body>
+</html>
