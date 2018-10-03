@@ -1,16 +1,7 @@
-		<div class="goods-catalog">
-			{% for good in goods %}
+		{% load staticfiles %}
 			<div class="good">
-				<a href="{% url good.href %}" >
-					{% load staticfiles %}
-					<img src="{% if good.img == 'http://placehold.it/100x82' %}
-					{{ good.img }}
-					{% else %}
-					{% static 'mainapp/img/' %}{{ good.img }}
-					{% endif %}
-					" alt="{{ good.name }}" class="catalog-img">
-					<p>{{ good.name }}</p>
+				<a href="{% url 'brooch' pk=good.id %}" >
+                    <img class="catalog-img" src="{% static 'mainapp/img/' %}{{ good.image }}" alt="{{ good.title }}" >
+					<p>{{ good.title }}</p>
 				</a>
 			</div>
-			{% endfor %}
-		</div>

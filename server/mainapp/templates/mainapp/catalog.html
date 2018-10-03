@@ -1,6 +1,5 @@
 {% extends 'master.html' %}
 
-{% load utility %}
 {% load staticfiles %}
 
 {% block page_title %}
@@ -17,10 +16,24 @@
 	
 	<div class="content">
 		<h1>Каталог</h1>
+		<ul class="main-menu">
+			{% for item in res_cat %}
+			<li class="{% if request.resolver_match.url_name == link.href %}
+			active
+			{% endif %}">
+				<a href="#">{{ item.title|title }}</a>
+			</li>
+			{% endfor %}
+		</ul>
+		<div class="goods-catalog">
+		{% for item in results %}
 
-		{% include 'mainapp/components/includes/inc_goods.html' %}
+		{% include 'mainapp/components/includes/inc_goods.html' with good=item %}
 
+		{% endfor %}
 		</div>
+	</div>
+
 
 
 {% endblock %}
