@@ -2,13 +2,6 @@ from django.shortcuts import render, get_list_or_404, get_object_or_404
 
 from . import models
 
-goods = [
-    {'href': 'brooch', 'image': 'cheshire_cat.jpg', 'title': 'Брошь Чеширский кот'},
-    {'href': 'brooch', 'image': 'http://placehold.it/100x82', 'title': 'Товар 2'},
-    {'href': 'brooch', 'image': 'http://placehold.it/100x82', 'title': 'Товар 3'},
-    {'href': 'brooch', 'image': 'http://placehold.it/100x82', 'title': 'Товар 4'},
-    {'href': 'brooch', 'image': 'http://placehold.it/100x82', 'title': 'Товар 5'},
-]
 links_menu = [
     {'href': 'main_page', 'name': 'главная'},
     {'href': 'catalog', 'name': 'каталог'},
