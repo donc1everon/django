@@ -1,6 +1,7 @@
 from django.core.management.base import BaseCommand
-from mainapp.models import ProductCategory, Product
-from django.contrib.auth.models import User
+from mainapp.models import Category, Product
+from authapp.models import ShopUser
+
 
 import json, os
 
@@ -16,24 +17,23 @@ class Command(BaseCommand):
 
         categories = loadFromJSON('categories')
 
-        ProductCategory.objects.all().delete()
+        Category.objects.all().delete()
+
         for category in categories:
-            new_category = ProductCategory(**category)
+            new_category = Category(**category)
             new_category.save()
 
         products = loadFromJSON('products')
 
-        # Product.objects.all().delete()
-        
+        Product.objects.all().delete()
+
         for product in products:
             category_name = product["category"]
             # Получаем категорию по имени
-            _category = ProductCategory.objects.get(name=category_name)
+            _category = Category.objects.get(title=category_name)
             # Заменяем название категории объектом
             product['category'] = _category
             new_product = Product(**product)
             new_product.save()
 
-# Создаем суперпользователя при помощи менеджера модели
-super_user = User.objects.create_superuser('django',
-'test@test.ru', 'geekbrains')
+        # super_user = ShopUser.objects.create_superuser('ad_test', 'django@geekshop.local', 'geekbrains', age=28)

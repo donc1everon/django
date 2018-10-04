@@ -1,0 +1,21 @@
+{% extends 'master.html' %}
+
+{% load staticfiles %}
+
+{% block page_title %}
+    {{ title|title }}
+{% endblock %}
+
+{% block page_content %}
+    <div class="container-log">
+        <div class="login">
+            <div class="h2 text-center head">
+                Вход в систему
+            </div>
+        </div>
+    </div>
+    {% block log_form %}
+
+    {% endblock %}
+
+{% endblock %}
